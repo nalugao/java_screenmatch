@@ -1,4 +1,0 @@
-package exercicios.ex11;
-
-public class CalculadoraSalaRetangularTest {
-}

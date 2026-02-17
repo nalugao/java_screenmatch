@@ -1,6 +1,6 @@
 package br.com.alura.screenmatch.modelos;
 
-public class Titulo {
+public class TituloSuperClasse implements Comparable<TituloSuperClasse> {
     private String nome;
     private int anoDeLancamento;
     private int duracaoEmMinutos;
@@ -8,12 +8,20 @@ public class Titulo {
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
 
+    public TituloSuperClasse(String nome, int anoDeLancamento) {
+        this.anoDeLancamento = anoDeLancamento;
+        this.nome = nome;
+    }
+
+    @Override
+    public int compareTo(TituloSuperClasse outroTitulo) {
+        return this.getNome().compareTo(outroTitulo.getNome());
+    }
+
     public void exibeFichaTecnica() {
         System.out.println("------------------------");
         System.out.println("Título: " +nome);
         System.out.println("Ano de lançamento: " +anoDeLancamento);
-//        System.out.println("Duração em minutos: " +duracaoEmMinutos);
-//        System.out.println("Incluído no plano: " +incluidoNoPlano);
     }
 
     public void avalia(double nota) {
@@ -60,4 +68,5 @@ public class Titulo {
     public int getTotalDeAvaliacoes() {
         return this.totalDeAvaliacoes;
     }
+
 }

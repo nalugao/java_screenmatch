@@ -3,10 +3,10 @@ package exercicios.java3.ex18;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Titulo implements Comparable<Titulo>{
+public class TituloTest implements Comparable<TituloTest>{
     public String nome;
 
-    public Titulo(String nome) {
+    public TituloTest(String nome) {
         this.nome = nome;
     }
 
@@ -20,21 +20,21 @@ public class Titulo implements Comparable<Titulo>{
     }
 
     @Override
-    public int compareTo(Titulo outroTitulo) {
+    public int compareTo(TituloTest outroTitulo) {
         return this.nome.compareTo(outroTitulo.nome);
     }
 
     public static void main(String[] args) {
-        ArrayList<Titulo> arrTitulos = new ArrayList<>();
+        ArrayList<TituloTest> arrTitulos = new ArrayList<>();
 
-        arrTitulos.add(new Titulo("Jojo"));
-        arrTitulos.add(new Titulo("Death Note"));
-        arrTitulos.add(new Titulo("Hunter vs Hunter"));
+        arrTitulos.add(new TituloTest("Jojo"));
+        arrTitulos.add(new TituloTest("Death Note"));
+        arrTitulos.add(new TituloTest("Hunter vs Hunter"));
 
         System.out.println(arrTitulos);
 
         Collections.sort(arrTitulos);
-        for (Titulo titulo : arrTitulos) {
+        for (TituloTest titulo : arrTitulos) {
             System.out.println(titulo);
         }
     }

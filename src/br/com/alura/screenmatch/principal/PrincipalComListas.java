@@ -2,7 +2,7 @@ package br.com.alura.screenmatch.principal;
 
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
-import br.com.alura.screenmatch.modelos.TituloSuperClasse;
+import br.com.alura.screenmatch.modelos.TituloSuperClass;
 
 import java.util.*;
 
@@ -16,13 +16,13 @@ public class PrincipalComListas {
         filme3.avalia(8);
         Serie serie = new Serie("Hunter vs Hunter", 2000);
 
-        ArrayList<TituloSuperClasse> lista = new ArrayList<>();
+        ArrayList<TituloSuperClass> lista = new ArrayList<>();
         lista.add(filme);
         lista.add(filme2);
         lista.add(filme3);
         lista.add(serie);
 
-        for (TituloSuperClasse item : lista) {
+        for (TituloSuperClass item : lista) {
             System.out.println(item.getNome());
             if (item instanceof Filme filmes && filmes.getClassificacao() > 2) {
                 System.out.println(" - Classificação: " + filmes.getClassificacao());
@@ -42,7 +42,7 @@ public class PrincipalComListas {
         System.out.println("Lista de titulos ordenados: ");
         Collections.sort(lista);
         System.out.println(lista);
-        lista.sort(Comparator.comparing(TituloSuperClasse::getAnoDeLancamento));
+        lista.sort(Comparator.comparing(TituloSuperClass::getAnoDeLancamento));
         System.out.println("Ordenando por ano: " + lista);
     }
 }
